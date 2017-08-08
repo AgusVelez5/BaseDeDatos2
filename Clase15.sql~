@@ -1,0 +1,9 @@
+-- CREATE VIEW hardware_suppliers AS
+SELECT DISTINCT customer_id, c1.store_id, first_name, last_name, address, postal_code, phone, city, country
+-- FROM customer c1, address, city, country, store
+FROM customer c1
+INNER JOIN store s1 USING (store_id)
+INNER JOIN address USING (s1.address_id)
+INNER JOIN city USING (city_id)
+INNER JOIN country USING (country_id)
+-- WHERE
