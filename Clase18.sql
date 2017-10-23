@@ -1,5 +1,7 @@
 CALL GetOfficeByCountry('USA');
 
+CALL GetAllProducts();
+
 CALL CountOrderByStatus('Shipped',@total);
 SELECT @total;
 
@@ -18,3 +20,17 @@ CALL GetCustomerShipping(@customerNo,@shipping);
 SELECT @customerNo AS Customer,
        @country    AS Country,
        @shipping   AS Shipping;
+       
+SET @email_list = "";
+CALL build_email_list(@email_list);
+SELECT @email_list;
+
+CALL test_mysql_loop();
+
+
+
+
+
+-- Sakila:
+
+
